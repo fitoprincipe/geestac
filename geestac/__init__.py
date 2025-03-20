@@ -4,17 +4,7 @@ __version__ = "0.0.0"
 __author__ = "Rodrigo Esteban Principe"
 __email__ = "fitoprincipe82@gmail.com"
 
-
-class Hello:
-    """Hello world class."""
-
-    msg = "hello world !"
-    "the message to print"
-
-    def hello_world(self) -> str:
-        """Hello world demo method.
-
-        Returns:
-            the hello world string
-        """
-        return self.msg
+# from .catalog import EECatalog
+# from .feature_collection import FeatureCollection
+# from .image import Image
+# from .image_collection import ImageCollection
