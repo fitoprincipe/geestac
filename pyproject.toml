@@ -8,7 +8,9 @@ version = "0.0.0"
 description = "Google Earth Engine STAC"
 keywords = [
   "skeleton",
-  "Python"
+  "Python",
+  "STAC",
+  "Google Earth Engine"
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -19,9 +21,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = [
-  "deprecated>=1.2.14"
+  "deprecated>=1.2.14",
+  "pystac"
 ]
 
 [[project.authors]]
