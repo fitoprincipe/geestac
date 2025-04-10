@@ -2,16 +2,27 @@
 
 import ee
 
-import geestac
+from geestac import eecatalog
+
+fao = eecatalog.FAO().GAUL_2015_level0()
 
 
 class TestFeatureCollection:
     """Test an optical EO ImageCollection."""
 
-    fao = geestac.FeatureCollection(
-        "https://storage.googleapis.com/earthengine-stac/catalog/FAO/FAO_GAUL_2015_level0.json"
-    )
-
     def test_ee_type(self):
         """Test an optical earth observation ImageCollection."""
-        assert self.fao.eeType == ee.FeatureCollection
+        assert fao.eeType == ee.FeatureCollection
+
+    def test_properties(self):
+        """Test properties."""
+        assert fao.properties.as_list("name") == [
+            "ADM0_CODE",
+            "ADM0_NAME",
+            "DISP_AREA",
+            "STATUS",
+            "Shape_Area",
+            "Shape_Leng",
+            "EXP0_YEAR",
+            "STR0_YEAR",
+        ]
