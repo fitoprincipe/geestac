@@ -16,7 +16,7 @@ class Image(Dataset):
         )
 
     @property
-    def bands(self) -> ListNamespace:
+    def bands(self) -> ListNamespace[Union[Band, BitBand, CategoricalBand, OpticalBand]]:
         """Image bands."""
         if len(self._bands) == 0:
             bands = []

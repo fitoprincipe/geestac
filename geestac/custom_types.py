@@ -27,7 +27,7 @@ class ListNamespace(Generic[T]):
             key: the attribute of the object to get the key from.
         """
         self._key = key
-        self._args = ()
+        self._args: tuple[T] = ()
         for obj in args:
             self.__setattr__(getattr(obj, key), obj)
 
