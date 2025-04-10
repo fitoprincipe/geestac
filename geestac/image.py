@@ -23,6 +23,7 @@ class Image(Dataset):
             summ = self._get_summaries()
             eobands = summ.get("eo:bands", [])
             general_scale = summ.get("gsd")
+            b: Union[Band, BitBand, CategoricalBand, OpticalBand]  # Explicit type hint for 'b'
             if isinstance(general_scale, (list, tuple)):
                 # TODO: check/investigate why it's a list and what happens if it has more than 1 item
                 general_scale = general_scale[0]
