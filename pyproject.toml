@@ -10,7 +10,8 @@ keywords = [
   "skeleton",
   "Python",
   "STAC",
-  "Google Earth Engine"
+  "Google Earth Engine",
+  "geetools"
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
