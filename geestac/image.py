@@ -9,15 +9,15 @@ class Image(Dataset):
     def __init__(self, href: str, name: str, parent):
         """Image Dataset."""
         super(Image, self).__init__(href=href, name=name, parent=parent)
-        self._bands = None
+        self._bands = ListNamespace(key="name")
 
     @property
     def bands(self) -> ListNamespace:
         """Image bands."""
-        if self._bands is None:
+        if len(self._bands) == 0:
             bands = []
             summ = self._get_summaries()
-            eobands = summ.get("eo:bands")
+            eobands = summ.get("eo:bands", [])
             general_scale = summ.get("gsd")
             if isinstance(general_scale, (list, tuple)):
                 # TODO: check/investigate why it's a list and what happens if it has more than 1 item

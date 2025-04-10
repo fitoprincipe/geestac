@@ -39,7 +39,7 @@ class Catalog(STAC):
         """Catalog."""
         super(Catalog, self).__init__(href, name, parent)
         self.data = {}
-        self.children = ListNamespace(key="name")
+        self.children: ListNamespace[Dataset] = ListNamespace(key="name")
 
     def __call__(self):
         """Fetch data."""

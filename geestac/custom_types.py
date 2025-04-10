@@ -2,7 +2,7 @@
 
 import json
 import logging
-from typing import Any, Generic, TypeVar
+from typing import Any, Generic, List, TypeVar
 
 from .helpers import format_attribute
 
@@ -61,7 +61,7 @@ class ListNamespace(Generic[T]):
         if key is None:
             return list(self._args)
         else:
-            args = []
+            args: List[Any] = []
             for arg in self._args:
                 try:
                     attr = getattr(arg, key)
@@ -100,7 +100,7 @@ class ListNamespace(Generic[T]):
         """Length of the ListNamespace."""
         return len(self._args)
 
-    def _append(self, obj: Any):
+    def _append(self, obj: T):
         """Append an object to the list."""
         key = getattr(obj, self._key)
         return self.__setattr__(key, obj)
