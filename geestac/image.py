@@ -1,5 +1,7 @@
 """Module to handle Image Datasets."""
 
+from typing import Union
+
 from .bands import Band, Bit, BitBand, BitGroup, Bitmask, CategoricalBand, Category, OpticalBand
 from .custom_types import ListNamespace
 from .dataset import Dataset
@@ -9,7 +11,9 @@ class Image(Dataset):
     def __init__(self, href: str, name: str, parent):
         """Image Dataset."""
         super(Image, self).__init__(href=href, name=name, parent=parent)
-        self._bands = ListNamespace(key="name")
+        self._bands: ListNamespace[Union[Band, BitBand, CategoricalBand, OpticalBand]] = (
+            ListNamespace(key="name")
+        )
 
     @property
     def bands(self) -> ListNamespace:
