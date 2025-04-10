@@ -27,7 +27,7 @@ class ListNamespace(Generic[T]):
             key: the attribute of the object to get the key from.
         """
         self._key = key
-        self._args: tuple[T] = ()
+        self._args: List[T] = []
         for obj in args:
             self.__setattr__(getattr(obj, key), obj)
 
@@ -46,7 +46,7 @@ class ListNamespace(Generic[T]):
         except AttributeError:
             args = list(self._args)
             args.append(value)
-            self._args = tuple(args)
+            self._args = args
             super().__setattr__(key, value)
         else:
             raise AttributeError(f"object with attribute {self._key} = {key} already exists.")
