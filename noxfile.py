@@ -26,7 +26,7 @@ def test(session):
     session.run("pytest", "--cov", "--cov-report=html", *test_files)
 
 
-@nox.session(reuse_venv=True, name="ci-test", venv_backend="uv")
+@nox.session(reuse_venv=True, name="ci-test", venv_backend="uv", python=["3.10", "3.11", "3.12"])
 def ci_test(session):
     """Run all the test and report coverage in xml."""
     session.install(".[test]")
