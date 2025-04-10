@@ -1,5 +1,5 @@
 
-geestac
+Google Earth Engine STAC (geestac)
 #######
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-yellow.svg?logo=opensourceinitiative&logoColor=white
@@ -43,9 +43,42 @@ geestac
 Overview
 --------
 
-Google Earth Engine STAC
+This packages provides an easy and straightforward way of getting Google Earth
+Engine STAC information.
+
+To take fully advantage of this package is recommended to use it in runtime
+due to `lazy evaluation <https://en.wikipedia.org/wiki/Lazy_evaluation>`_
+
+Installation
+------------
+
+Currently not available in pypi (will as soon as first version is ready)
+
+Usage
+-----
+
+.. code-block:: python
+
+    from geestac import eecatalog
+
+    # a lazy object does not contain the complete data but only the reference (name and url)
+    landsat_lazy = eecatalog.Landsat
+
+    # to fetch all data you need to call it
+    landast = eecatalog.Landsat()
+
+    # if you do this in runtime, the `landsat` object contains all datasets as attributes
+    # if you don't do it in runtime you won't be able to see the datasets (attributes)
+
+    # it works the same with datasets
+    # lazy dataset
+    l9_lazy = landsat.LC09_C02_T1
+    # fetch L9 data
+    l9 = landsat.LC09_C02_T1()
+
 
 Credits
 -------
+Author: Rodrigo E. Principe
 
 This package was created with `Copier <https://copier.readthedocs.io/en/latest/>`__ and the `@12rambau/pypackage <https://github.com/12rambau/pypackage>`__ 0.1.16 project template.
