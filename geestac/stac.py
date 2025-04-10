@@ -18,7 +18,7 @@ class STAC:
         """
         self.href = href
         self.name = name
-        self.data = {}
+        self.data: dict = {}
         self.parent = parent
         self._lazy = True
 

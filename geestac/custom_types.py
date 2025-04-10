@@ -2,7 +2,7 @@
 
 import json
 import logging
-from typing import Any, Generic, List, TypeVar
+from typing import Any, Generic, TypeVar
 
 from .helpers import format_attribute
 
@@ -15,7 +15,7 @@ T = TypeVar("T")
 class ListNamespace(Generic[T]):
     """A Namespace to store objects with a unique attribute (key)."""
 
-    def __init__(self, *args: List[T], key: str):
+    def __init__(self, *args: T, key: str):
         """A Namespace to store objects with a unique attribute (key).
 
         If the value of the key is not suitable for an attribute, it'll be
@@ -46,7 +46,7 @@ class ListNamespace(Generic[T]):
         except AttributeError:
             args = list(self._args)
             args.append(value)
-            self._args = args
+            self._args = tuple(args)
             super().__setattr__(key, value)
         else:
             raise AttributeError(f"object with attribute {self._key} = {key} already exists.")
