@@ -25,7 +25,8 @@ classifiers = [
 requires-python = ">=3.10"
 dependencies = [
   "deprecated>=1.2.14",
-  "pystac"
+  "requests",
+  "earthengine-api"
 ]
 
 [[project.authors]]
