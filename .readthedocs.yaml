@@ -13,7 +13,7 @@ build:
     install:
       - pip install sphinx-copybutton
       - pip install sphinx-design
-      - pip install autoapi
+      - pip install sphinx-autoapi
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
