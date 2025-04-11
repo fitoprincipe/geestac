@@ -64,10 +64,10 @@ Usage
     from geestac import eecatalog
 
     # a lazy object does not contain the complete data but only the reference (name and url)
-    landsat_lazy = eecatalog.Landsat
+    landsat_lazy = eecatalog.LANDSAT
 
     # to fetch all data you need to call it
-    landast = eecatalog.Landsat()
+    landast = eecatalog.LANDSAT()
 
     # if you do this in runtime, the `landsat` object contains all datasets as attributes
     # if you don't do it in runtime you won't be able to see the datasets (attributes)
