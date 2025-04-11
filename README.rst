@@ -47,12 +47,12 @@ This packages provides an easy and straightforward way of getting Google Earth
 Engine STAC information.
 
 To take fully advantage of this package is recommended to use it in runtime
-due to `lazy evaluation <https://en.wikipedia.org/wiki/Lazy_evaluation>`_
+due to `lazy evaluation <https://en.wikipedia.org/wiki/Lazy_evaluation>`__
 
 Installation
 ------------
 
-Currently not available in pypi (will as soon as first version is ready)
+Currently not available in pypi (will as soon as first version is ready).
 
 Usage
 -----
