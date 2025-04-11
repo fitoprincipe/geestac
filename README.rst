@@ -52,7 +52,9 @@ due to `lazy evaluation <https://en.wikipedia.org/wiki/Lazy_evaluation>`__
 Installation
 ------------
 
-Currently not available in pypi (will as soon as first version is ready).
+.. code-block:: bash
+
+    pip install geestac
 
 Usage
 -----
