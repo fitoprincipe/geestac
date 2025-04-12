@@ -1,6 +1,7 @@
 """Earth Engine STAC Catalog."""
 
 import re
+from typing import Union
 
 import requests
 
@@ -39,7 +40,7 @@ class Catalog(STAC):
         """Catalog."""
         super(Catalog, self).__init__(href, name, parent)
         self.data = {}
-        self.children: ListNamespace[Dataset] = ListNamespace(key="name")
+        self.children: ListNamespace[Union[Dataset, LazyDataset]] = ListNamespace(key="name")
 
     def __call__(self):
         """Fetch data."""
