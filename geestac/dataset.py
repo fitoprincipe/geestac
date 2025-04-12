@@ -92,12 +92,12 @@ class Dataset(STAC):
         return types.get(ty)
 
     @property
-    def license(self):
+    def license(self) -> str | None:
         """License of Use."""
         return self.data.get("license")
 
     @property
-    def assetId(self):
+    def assetId(self) -> str | None:
         """Earth Engine Asset Id."""
         return self.data.get("id")
 
@@ -107,7 +107,7 @@ class Dataset(STAC):
         return self.eeType(self.assetId) if self.assetId else None
 
     @property
-    def status(self):
+    def status(self) -> str | None:
         """Status of the Dataset."""
         return self.data.get("gee:status")
 
@@ -122,6 +122,16 @@ class Dataset(STAC):
         return ListNamespace(*prop, key="name")
 
     @property
-    def terms_of_use(self):
+    def terms_of_use(self) -> str | None:
         """Terms of use."""
         return self.data.get("gee:terms_of_use")
+
+    @property
+    def DOI(self) -> str | None:
+        """DOI."""
+        return self.data.get("sci:doy")
+
+    @property
+    def citation(self) -> str | None:
+        """Citation."""
+        return self.data.get("sci:citation")

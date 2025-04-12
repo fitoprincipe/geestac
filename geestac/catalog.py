@@ -58,7 +58,6 @@ class Catalog(STAC):
                 if re.match(f"^{self.name}", name):
                     name = name.replace(f"{self.name}_", "")
                 catalog = LazyDataset(link["href"], name, self)
-                # setattr(self.children, name, catalog)
                 self.children._append(catalog)
                 self.__setattr__(name, catalog)
 
