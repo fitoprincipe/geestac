@@ -5,7 +5,7 @@ authors:
     given-names: "Rodrigo Esteban"
     orcid: "https://orcid.org/0000-0000-0000-0000"
 title: "geestac"
-version: "0.0.0"
+version: "0.0.1"
 doi: ""
 date-released: "2025-02-17"
 url: "https://github.com/fitoprincipe/geestac"

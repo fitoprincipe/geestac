@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "geestac"
-version = "0.0.0"
+version = "0.0.1"
 description = "Google Earth Engine STAC"
 keywords = [
   "skeleton",
@@ -71,7 +71,7 @@ post-install-commands = ["pre-commit install"]
 [tool.commitizen]
 tag_format = "v$major.$minor.$patch$prerelease"
 update_changelog_on_bump = false
-version = "0.0.0"
+version = "0.0.1"
 version_files = [
     "pyproject.toml:version",
     "geestac/__init__.py:__version__",
