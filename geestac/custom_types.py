@@ -94,7 +94,7 @@ class ListNamespace(Generic[T]):
         if isinstance(index, int):
             return self._args[index]
         else:
-            return self.as_dict()[str]
+            return self.as_dict()[index]
 
     def __len__(self):
         """Length of the ListNamespace."""
